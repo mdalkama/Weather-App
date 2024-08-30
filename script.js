@@ -5,7 +5,7 @@ const temperature = document.querySelector('.temperature');
 const description = document.querySelector('.description');
 const hourlyWeatherList = document.querySelector('.weather-list');
 const weatherLocation = document.querySelector('.location');
-const API_KEY = "fdd1489a689e4046899142559242908"
+const API_KEY = "fdd1489a689e4046899142559242908";
 
 /* weather codes mapping to custom icons */
 
@@ -36,7 +36,7 @@ const displayHourlyForecast = (displayHourlyForecast)=>{
 }
 
 const getWeatherDetails = async (cityName)=>{
-    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityName}&days=10`;
+    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityName}`;
     try{
         const response = await fetch(API_URL);
         //main object data
@@ -56,6 +56,7 @@ const getWeatherDetails = async (cityName)=>{
         //set location 
         weatherLocation.innerHTML = `${data.location.name}`;
     }catch(error){
+        console.log(error);
         weatherIcon.src = "icons/no-result.svg";
         temperature.innerHTML = `0<span>°C</span>`;
         description.innerHTML = "Not Found";
@@ -69,16 +70,6 @@ searchInput.addEventListener('keyup',(e)=>{
         getWeatherDetails(cityName);
     }
 })
-
-// locationButton.addEventListener("click", ()=>{
-//     navigator.geolocation.getCurrentPosition(position =>{
-//         console.log(position);
-//     }, error =>{
-//         alert("Location access denied. please enable permission to use this feature.")
-//     })
-// })
-
-
 
 getWeatherDetails("Delhi");
 
