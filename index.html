@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2836be23db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css ">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- search section -->
+        <div class="search-section">
+            <div class="input-wrapper">
+                <span class="material-symbols-rounded">search</span>
+                <input type="search" placeholder="Enter a city name" class="search-input">
+            </div>
+            <!-- <button class="location-button">
+                <span class="material-symbols-rounded">my_location</span>
+            </button> -->
+        </div>
+        <!-- weather section -->
+        <div class="weater-section">
+            <!-- current weather -->
+            <div class="current-weather">
+                <h2>Your Location</h2>
+                <p style="padding-bottom: 30px;" class="location"></p>
+                <img src="icons/clouds.svg" class="weather-icon">
+                <h2 class="temperature">20<span>°C</span></h2>
+                <p class="description">Partly cloudy</p>
+            </div>
+        </div>
+
+        <div class="houlry-weather">
+            <ul class="weather-list">
+                <!--dynamically hourly weather display from the object-->
+            </ul>
+        </div>
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>
